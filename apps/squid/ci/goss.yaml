@@ -1,0 +1,14 @@
+---
+# yaml-language-server: $schema=https://raw.githubusercontent.com/goss-org/goss/master/docs/schema.yaml
+process:
+  squid:
+    running: true
+port:
+  tcp6:3128:
+    listening: true
+http:
+  http://localhost:3128:
+    status: 200
+    proxy: http://localhost:3128
+    url: https://www.google.com
+    timeout: 5000

@@ -18,7 +18,6 @@ RUN mkdir -p /etc/squid-cert /var/cache/squid /var/log/squid /var/spool/squid &&
         catatonit \
         ca-certificates && \
     update-ca-certificates && \
-    rm -rf /etc/squid/squid.conf && \
     chown -R squid:squid /etc/squid-cert /var/cache/squid/ /var/log/squid/ /var/spool/squid
 
 COPY apps/squid/openssl.conf /etc/ssl/openssl.conf

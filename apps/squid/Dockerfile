@@ -22,7 +22,7 @@ RUN mkdir -p /etc/squid-cert /var/cache/squid /var/log/squid /var/spool/squid &&
     chown -R squid:squid /etc/squid-cert /var/cache/squid/ /var/log/squid/ /var/spool/squid
 
 COPY openssl.conf /etc/ssl/openssl.conf
-COPY entrypoint.sh /entrypoint.sh
+COPY apps/squid/entrypoint.sh /entrypoint.sh
 
 EXPOSE ${SQUID_PROXY_PORT} ${SQUID_PROXY_SSL_PORT}
 

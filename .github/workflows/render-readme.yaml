@@ -48,8 +48,8 @@ jobs:
       - name: Commit Changes
         shell: bash
         run: |
-          git config --global user.name "gordon-freeman"
-          git config --global user.email "98030736+gordon-freeman[bot]@users.noreply.github.com"
+          git config --global user.name "gordonfreeman-bot"
+          git config --global user.email "903998+gordonfreeman-bot[bot]@users.noreply.github.com"
           git add ./README.md
           git commit -m "chore: render README.md" || echo "No changes to commit"
           git push origin || echo "No changes to push"

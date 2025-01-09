@@ -25,9 +25,11 @@ create_cert() {
 }
 
 init_ssl_db() {
+    echo "Initializing SSL database..."
     rm -rf /var/lib/ssl_db/*
     /usr/lib/squid/security_file_certgen -c -s /var/lib/ssl_db -M 4MB
     chown -R squid:squid /var/lib/ssl_db
+    chmod 700 /var/lib/ssl_db
 }
 
 init_cache() {

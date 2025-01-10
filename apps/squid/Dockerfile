@@ -11,14 +11,14 @@ ENV CERT_CN=squid.local \
     CERT_ORG="Anomalous Materials" \
     CERT_OU="Lambda Complex"
 
-RUN mkdir -p /etc/squid-cert /var/cache/squid /var/log/squid /var/spool/squid /var/lib/ssl_db && \
+RUN mkdir -p /etc/squid-cert /var/cache/squid /var/log/squid /var/spool/squid && \
     apk add --no-cache \
         squid=${SQUID_VERSION} \
         openssl \
         catatonit \
         ca-certificates && \
     update-ca-certificates && \
-    chown -R squid:squid /etc/squid-cert /var/cache/squid/ /var/log/squid/ /var/spool/squid /var/lib/ssl_db
+    chown -R squid:squid /etc/squid-cert /var/cache/squid/ /var/log/squid/ /var/spool/squid
 
 COPY apps/squid/openssl.conf /etc/ssl/openssl.conf
 COPY apps/squid/entrypoint.sh /entrypoint.sh
